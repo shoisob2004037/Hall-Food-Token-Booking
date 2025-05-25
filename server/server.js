@@ -18,7 +18,7 @@ const app = express()
 // Middleware
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: process.env.FRONTEND_URL,
     credentials: true,
   }),
 )
@@ -47,6 +47,10 @@ app.use("/api", topupRoutes)
 // Basic route
 app.get("/", (req, res) => {
   res.send("Food Token API is running")
+})
+
+app.get("/health", (req, res)=>{
+  res.status(200).json({ status: "OK", message: "Server is okay" })
 })
 
 // Start server
