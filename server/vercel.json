@@ -10,6 +10,14 @@
     {
       "src": "/api/(.*)",
       "dest": "server/server.js"
+    },
+    {
+      "src": "/",
+      "dest": "server/server.js"
+    },
+    {
+      "src": "/health",
+      "dest": "server/server.js"
     }
   ]
 }
